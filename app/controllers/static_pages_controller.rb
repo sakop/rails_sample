@@ -6,6 +6,9 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    authorize :StaticPage, :about?
+  end
 
+  def contact
   end
 end
