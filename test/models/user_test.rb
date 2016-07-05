@@ -79,4 +79,5 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
     puts @user.errors.full_messages
   end
+
 end
