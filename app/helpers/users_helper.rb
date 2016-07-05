@@ -6,4 +6,11 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: 'gravatar')
   end
 
+  def digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+      BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+  module_function :digest
 end
