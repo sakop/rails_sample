@@ -6,13 +6,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  # Log in as a particular user.
-  def log_in_as(user, password: 'password', remember_me: '1')
-    post login_path, {session: {email: user.email,
-                                password: password,
-                                remember_me: remember_me}}
-  end
-
   test "Login with invalid information" do
     get login_path
     assert_template "sessions/new"

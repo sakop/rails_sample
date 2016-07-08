@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root 'static_pages#home'
 
-  resources :users, except: :create
+  resources :users
   get 'signup' => 'users#new'
   post 'signup' => 'users#create'
 
