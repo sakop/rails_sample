@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  resources :account_activations, only: [:edit]
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
